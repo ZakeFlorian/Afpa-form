@@ -1,5 +1,4 @@
 <?php
-$redirectController = 'controllers/controller-signup.php';
+$redirectController = 'controllers/controller-signin.php';
 header("Location: " . $redirectController);
 exit();
-?>

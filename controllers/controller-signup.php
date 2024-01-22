@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <?php
+ <?php
     require("../config.php");
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors = [];
@@ -27,7 +17,7 @@
         } 
 
         $birthdate = $_POST['birthdate'];
-// Contrôle de la date de naissance
+
     if (empty($_POST['birthdate'])) {
         $errors["spanBirthdate"] = "Le champ Date de naissance ne peut pas être vide";
     }
@@ -57,13 +47,16 @@
         }
 
         if (empty($errors)) {
+            require_once("../models/user.php");
+
                 $nom = htmlspecialchars($_POST['nom']);
                 $prenom = $_POST['prenom'];
                 $pseudo = htmlspecialchars($_POST["pseudo"]);
                 $birthdate = $_POST['birthdate'];
                 $email = $_POST['mail'];
-                $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                $password = ($_POST['password']);
                 $enterprise = $_POST['enterprise'];
+                Utilisateur::create($nom, $prenom, $pseudo, $birthdate, $email, $password, $enterprise);
 
             header("Location: controller-signin.php");
             exit();
@@ -73,8 +66,3 @@
         include_once '../views/view-signup.php';
     }
     ?>
-
-
-</body>
-
-</html>
