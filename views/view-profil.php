@@ -12,6 +12,7 @@
   <img src="<?= $_SESSION['user']['Image_utilisateur'] ?>" class="card-img-top" alt="photo de l'utilisateur">
   <div class="card-body">
     <h5 class="card-title">Pseudo : <?= $_SESSION['user']['nickname_utilisateur'] ?></h5>
+    <h5 class="card-title">Entreprise : <?= $_SESSION['user']['name_entreprise'] ?></h5>
     <button> Ajouter un trajet</button>
     <a href="controller-profil.php"><button>Profil</button></a>
   </div>

@@ -95,7 +95,7 @@ class Utilisateur
             $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSER, DBPASS);
 
             // stockage de ma requete dans une variable
-            $sql = "SELECT * FROM `utilisateur` WHERE `email_utilisateur` = :mail";
+            $sql = "SELECT * FROM `utilisateur` NATURAL JOIN `entreprise` WHERE `email_utilisateur` = :mail";
 
             // je prepare ma requête pour éviter les injections SQL
             $query = $db->prepare($sql);
