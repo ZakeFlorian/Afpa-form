@@ -4,7 +4,6 @@ require_once("../models/user.php");
 require_once("../config.php");
 
 
-var_dump($_POST);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -17,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($_POST['password'])) {
         $errors['password'] = 'Veuillez saisir votre mot de passe';
     }
-    var_dump($errors);
     if (empty($errors)) {
 
         if (!Utilisateur::checkMailExists($_POST['mail'])) {
@@ -36,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
     }
-    var_dump($errors);
 }
 
 
