@@ -11,7 +11,7 @@ class Trajet
      * @return void 
      
     */
-    public static function create(string $date, string $distance, string $traveltime, string $transport, string $id_user)
+    public static function create(string $date, string $distance, string $traveltime, string $transport, string $id_user,)
     {
 
         try {

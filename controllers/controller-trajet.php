@@ -1,6 +1,12 @@
 <?php
 session_start();
 require_once('../config.php');
+if (!isset($_SESSION['user']['id_utilisateur'])) {
+    // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
+    $redirectController = 'controller-signin.php';
+    header("Location: " . $redirectController);
+    exit();
+}
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $errors = [];

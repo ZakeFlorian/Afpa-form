@@ -17,11 +17,10 @@
         }
     </style>
 </head>
-
+<?php
+include 'templates/header.php';
+?>
 <body class="bg-black">
-    <?php
-    include('../views/templates/header.php');
-    ?>
     <div class="container mt-5 formulaire">
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" novalidate>
             <div class="mb-3">
