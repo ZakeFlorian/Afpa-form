@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <title>Document</title>
 </head>
 
-<body class="bg-black">
+<body>
     <?php
     include('../views/templates/header.php');
     ?>
@@ -27,7 +28,7 @@
 
             <div class="mb-3">
                 <label for="traveltime" class="text-white">Durée du trajet :</label>
-                <input type="time" id="traveltime" name="traveltime" min="00:00" max="24:00" required value="<?= $_POST['traveltime'] ?? '' ?>" />
+                <input type="time" id="traveltime" name="traveltime" min="00:00:00" max="24:00:00" required value="<?= $_POST['traveltime'] ?? '' ?>" />
                 <p class="text-warning">Format [Heure:Minute]</p>
                 <span class="input-warning text-danger">
                     <?= $errors['traveltime'] ?? '' ?>
