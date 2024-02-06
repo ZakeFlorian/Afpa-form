@@ -10,11 +10,10 @@
     <title>Formulaire d'inscription</title>
 
 </head>
-
-<body>
-    <?php
-    include('../views/templates/header.php');
-    ?>
+<?php
+include 'templates/header.php';
+?>
+<body class="bg-black">
     <div class="container mt-5 formulaire">
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" novalidate>
             <div class="mb-3">

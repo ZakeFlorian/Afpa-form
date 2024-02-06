@@ -6,29 +6,38 @@
         <link rel="stylesheet" href="../../assets/css/style.css">
     <title>Home</title>
     <style>
-      .card{
-        margin: auto;
-        box-shadow: 5px 5px 5px black;
-      }
+        .container {
+            border: 1px solid #ddd;
+            background: linear-gradient(to left, #87CEEB, black);
+            border-radius: 8px;
+            padding: 20px;
+        }
     </style>
 </head>
-<body>
+<?php
+include 'templates/header.php';
+?>
+<body class="bg-black">
     
-<div class="card" style="width: 18rem;">
-  <img src="<?= $_SESSION['user']['Image_utilisateur'] ?>" class="card-img-top" alt="photo de l'utilisateur">
+<div class="container card" style="width: 18rem;">
+  <img src="<?= $_SESSION['user']['Image_utilisateur'] ?>" class="card-img-top text-white" alt="photo de l'utilisateur">
   <div class="card-body">
-    <h5 class="card-title">Entreprise : <?= $_SESSION['user']['name_entreprise'] ?></h5>
-    <h5 class="card-title">Pseudo : <?= $_SESSION['user']['nickname_utilisateur'] ?></h5>
-    <h5 class="card-title">Nom : <?= $_SESSION['user']['lastname_utilisateur'] ?></h5>
-    <h5 class="card-title">Prénom : <?= $_SESSION['user']['firstname_utilisateur'] ?></h5>
-    <h5 class="card-title">Email : <?= $_SESSION['user']['email_utilisateur'] ?></h5>
-    <h5 class="card-title">Date de naissance : <?= $_SESSION['user']['birthdate_utilisateur'] ?></h5>
-    <h5 class="card-title">A propos de vous : <?= $_SESSION['user']['description_utilisateur'] ?></h5>
-    <a href="controller-home.php"><button>Retour</button></a>
+    <h5 class="card-title text-warning">Entreprise : <p class="text-white"><?= $_SESSION['user']['name_entreprise'] ?></p></h5>
+    <h5 class="card-title text-warning">Pseudo : <p class="text-white"><?= $_SESSION['user']['nickname_utilisateur'] ?></p></h5>
+    <h5 class="card-title text-warning">Nom : <p class="text-white"><?= $_SESSION['user']['lastname_utilisateur'] ?></p></h5>
+    <h5 class="card-title text-warning">Prénom : <p class="text-white"><?= $_SESSION['user']['firstname_utilisateur'] ?></p></h5>
+    <h5 class="card-title text-warning">Email : <p class="text-white"><?= $_SESSION['user']['email_utilisateur'] ?></p></h5>
+    <h5 class="card-title text-warning">Date de naissance : <p class="text-white"><?= $_SESSION['user']['birthdate_utilisateur'] ?></p></h5>
+    <h5 class="card-title text-warning">A propos de vous : <p class="text-white"><?= $_SESSION['user']['description_utilisateur'] ?></p></h5>
+    <a href="controller-home.php"><button class="btn btn-primary d-block">Retour</button></a>
   </div>
 </div>
 
-
+<footer>
+        <?php
+        include 'templates/footer.php';
+        ?>
+    </footer>
 
 
 

@@ -6,12 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <title>Document</title>
+    <style>
+        .container {
+            border: 1px solid #ddd;
+            background: linear-gradient(to left, #87CEEB, black);
+            border-radius: 8px;
+            padding: 20px;
+        }
+    </style>
 </head>
-
+<?php
+include 'templates/header.php';
+?>
 <body>
-    <?php
-    include('../views/templates/header.php');
-    ?>
+
     <div class="container mt-5 formulaire">
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" novalidate>
 
@@ -27,8 +35,8 @@
             </div>
 
             <div class="mb-3">
-                <label for="traveltime" class="text-white">Durée du trajet :</label>
-                <input type="time" id="traveltime" name="traveltime" min="00:00:00" max="24:00:00" required value="<?= $_POST['traveltime'] ?? '' ?>" />
+            <label for="traveltime" class="text-white">Temps de trajet</label>
+                <input class="input-select-width" type="time" id="appt" name="traveltime" min="00:09:00" max="18:00:00"/>
                 <p class="text-warning">Format [Heure:Minute]</p>
                 <span class="input-warning text-danger">
                     <?= $errors['traveltime'] ?? '' ?>
@@ -66,6 +74,11 @@
             <input class="btn btn-primary" type="submit" value="Valider">
         </form>
     </div>
+    <footer>
+        <?php
+        include 'templates/footer.php';
+        ?>
+    </footer>
 </body>
 
 </html>

@@ -9,14 +9,22 @@ require_once "../controllers/controller-signin.php"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="../../assets/css/style.css">
     <title>Form Signin</title>
+    <style>
+        .container {
+            border: 1px solid #ddd;
+            background: linear-gradient(to left, #87CEEB, black);
+            border-radius: 8px;
+            padding: 20px;
+        }
+    </style>
 </head>
 <?php
 include 'templates/header.php';
 ?>
 
-<body>
-    <h1 class="text-center">Connexion</h1>
-    <div class="container mt-5 formulaire bg-secondary">
+<body class="bg-black">
+    <h1 class="text-center text-white">Connexion</h1>
+    <div class="container mt-5 formulaire">
         <form method="POST" novalidate action="">
         <div class="mb-3">
                 <label for="mail" class="form-label text-white">Courriel</label>
