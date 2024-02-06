@@ -18,7 +18,7 @@
 <?php
 include 'templates/header.php';
 ?>
-<body>
+<body class="bg-black">
 
     <div class="container mt-5 formulaire">
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" novalidate>
@@ -36,7 +36,7 @@ include 'templates/header.php';
 
             <div class="mb-3">
             <label for="traveltime" class="text-white">Temps de trajet</label>
-                <input class="input-select-width" type="time" id="appt" name="traveltime" min="00:09:00" max="18:00:00"/>
+                <input class="input-select-width" type="time" id="traveltime_trajet" name="traveltime_trajet"/>
                 <p class="text-warning">Format [Heure:Minute]</p>
                 <span class="input-warning text-danger">
                     <?= $errors['traveltime'] ?? '' ?>
@@ -70,9 +70,9 @@ include 'templates/header.php';
                 </span>
             </div>
 
-
             <input class="btn btn-primary" type="submit" value="Valider">
         </form>
+        <a href="controller-home.php"><button class="btn btn-primary d-block">Retour</button></a>
     </div>
     <footer>
         <?php

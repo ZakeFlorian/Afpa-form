@@ -29,7 +29,7 @@ include 'templates/header.php';
     <h1 class="text-center text-warning"><?php echo 'Nous sommes le ' . $dateDuJour ?></h1>
 
     <div class="card mx-auto" style="width: 18rem;">
-        <img src="<?= $_SESSION['user']['Image_utilisateur'] ?>" class="card-img-top"
+        <img src="../assets/img/<?= $_SESSION['user']['Image_utilisateur'] ?>" class="card-img-top"
              alt="photo de l'utilisateur">
         <div class="card-body">
             <h5 class="card-title">Pseudo : <?= $_SESSION['user']['nickname_utilisateur'] ?></h5>

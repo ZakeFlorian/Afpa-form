@@ -22,42 +22,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($id_trajet > 0) {
         // Supprimer le trajet
         Trajet::deleteTrajet($id_trajet);
+        header("Location: controller-historique.php");
+        exit();
     }
 }
 
 // Afficher les informations de session à des fins de débogage
-// var_dump($_SESSION);
+var_dump($_SESSION);
 
 
 include_once '../views/view-historique.php';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-include '../views/view-historique.php';

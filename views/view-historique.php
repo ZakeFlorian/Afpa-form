@@ -47,7 +47,7 @@ include 'templates/header.php';
                         </td>
                         <td>
                                     <form action="" method="post">
-                                        <input class="deleteTrajet" type="hidden" name="id_trajet" value="<?= $trajet['id_trajet'] ?>">
+                                        <input class="deleteTrajet" type="hidden" name="id_trajet" value="<?= $value['id_trajet'] ?>">
                                         <button class="btnDelete" type="submit" onclick="return confirm('Voulez-vous vraiment supprimer ce trajet ?')">
                                         </button>
                                     </form>
@@ -57,7 +57,7 @@ include 'templates/header.php';
             </tbody>
         </table>
       </div>
-
+      <a href="controller-home.php"><button class="btn btn-primary d-block">Retour</button></a><a href="controller-trajet.php"><button class="btn btn-primary d-block">Ajouter un nouveau trajet</button></a>
       <footer>
         <?php
         include 'templates/footer.php';

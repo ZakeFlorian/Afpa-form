@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['date'] = 'Veuillez saisir une date de trajet';
     }
 
-    if (empty($_POST['traveltime'])) {
+    if (empty($_POST['traveltime_trajet'])) {
         $errors['traveltime'] = 'Veuillez saisir une durée de trajet';
     }
     if (empty($_POST['distance'])) {
@@ -27,13 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($errors)) {
         require_once '../models/trajet.php';
         $date = ($_POST['date']);
-        $traveltime = $_POST['traveltime'];
+        $traveltime = $_POST['traveltime_trajet'];
         $distance = ($_POST["distance"]);
         $transport = $_POST['transport'];
         $id_user = $_SESSION['user']['id_utilisateur'];
-        Trajet::create($date, $traveltime, $distance, $transport, $id_user);
+        Trajet::create($date, $distance, $traveltime, $transport, $id_user);
 
-        header("Location: controller-home.php");
+        header("Location: controller-historique.php");
         exit();
     }
 

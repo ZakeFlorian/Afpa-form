@@ -75,7 +75,7 @@ class Trajet
  */
 public static function deleteTrajet(int $id_trajet) {
     try {
-        $db = new PDO(DBNAME, DBUSER, DBPASS);
+        $db = new PDO("mysql:host=localhost;dbname=" . DBNAME, DBUSER, DBPASS);
 
         $sql = "DELETE FROM `trajet` WHERE `id_trajet` = :id_trajet";
         $query = $db->prepare($sql);
