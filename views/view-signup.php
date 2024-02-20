@@ -64,8 +64,9 @@ include 'templates/header.php';
             <div class="mb-3">
                 <select name="enterprise" class="rounded" id="enterprise">
                     <option value="">--Veuillez selectionner une entreprise--</option>
-                    <option value="1" <?= isset($_POST['enterprise'])&&$_POST['enterprise']==1 ? 'selected' : ''?>>LunaTech Solutions</option>
-                    <option value="2" <?= isset($_POST['enterprise'])&&$_POST['enterprise']==2 ? 'selected' : ''?>>Phoenix Consulting and Design</option>
+                    <?php foreach ($entreprises as $enterprise) { ?>
+                                            <option class="text-dark" value="<?= $enterprise['ID_Entreprise'] ?>"><?= $enterprise['name_entreprise'] ?></option>
+                                        <?php } ?>
                 </select>
                 <span class="input-warning text-danger">
                     <?= $errors['enterprise']?? '' ?>

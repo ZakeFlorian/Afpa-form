@@ -1,9 +1,11 @@
  <?php
     require("../config.php");
+    require_once("../models/entreprise.php");
+    
+    $entreprises = Entreprise::getAllEntreprise();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors = [];
-
-
+        
         if (empty($_POST['nom'])) {
             $errors['nom'] = "Veuillez saisir un nom";
         } 

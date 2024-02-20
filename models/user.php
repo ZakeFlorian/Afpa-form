@@ -84,11 +84,11 @@ class Utilisateur
     /**
      * 
      * 
-     * @param string $email 
+     * @param string $mail 
      * 
      * @return array 
      */
-    public static function getInfos(string $email): array
+    public static function getInfos(string $mail): array
     {
         try {
             // Création d'un objet $db selon la classe PDO
@@ -101,7 +101,7 @@ class Utilisateur
             $query = $db->prepare($sql);
 
             // on relie les paramètres à nos marqueurs nominatifs à l'aide d'un bindValue
-            $query->bindValue(':mail', $email, PDO::PARAM_STR);
+            $query->bindValue(':mail', $mail, PDO::PARAM_STR);
 
             // on execute la requête
             $query->execute();

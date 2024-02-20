@@ -6,9 +6,11 @@ require_once("../config.php");
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+$user = Utilisateur::getInfos($_POST['mail']);
     $errors = [];
-
+if ($user['user_validate']==0){
+    echo 'Your account has been locked. Please contact the support for more informations.';
+} else {
     if (empty($_POST['mail'])) {
         $errors['mail'] = 'Veuillez saisir votre Email';
     }
@@ -34,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
     }
+}
 }
 
 
